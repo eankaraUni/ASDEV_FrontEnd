@@ -29,7 +29,7 @@ export class AddIssueComponent implements OnInit {
     //   this.wrongValues = false;
     //   return;
     // }
-    console.log("Dsdvfdsc");
+    // console.log("Dsdvfdsc");
     this.serverH.addIssue(this.addIssueForm.value).subscribe((result: any) => {
         console.log(result);
         //
