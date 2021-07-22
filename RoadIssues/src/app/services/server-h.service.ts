@@ -64,6 +64,22 @@ export class ServerHService {
       headers: headers,
     });
 }
+  solveIssue(id: String): Observable<Object> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.authS.getToken()}`,
+    });
+    return this.http.post(`${this.server_url}/private/operator/updateStatus/${id}` ,{
+      headers: headers,
+    });
+}
+  getIssue(id:String): Observable<Object> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.authS.getToken()}`,
+    });
+    return this.http.get(`${this.server_url}/private/reporter/Issue/${id}` ,{
+      headers: headers,
+    });
+}
 
 
 }

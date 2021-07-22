@@ -17,6 +17,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { MaterialModule } from './material/material.module';
 import { UserpanelComponent } from './admin/userpanel/userpanel.component';
 import { AddIssueComponent } from './reporter/add-issue/add-issue.component';
+import { UpdateIssueComponent } from './reporter/update-issue/update-issue.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AddIssueComponent } from './reporter/add-issue/add-issue.component';
     HomeComponent,
     SignupComponent,
     UserpanelComponent,
-    AddIssueComponent
+    AddIssueComponent,
+    UpdateIssueComponent
   ],
   imports: [
     BrowserModule,

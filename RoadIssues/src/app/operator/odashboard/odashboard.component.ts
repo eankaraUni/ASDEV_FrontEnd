@@ -7,7 +7,7 @@ import { ServerHService } from 'src/app/services/server-h.service';
 })
 export class OdashboardComponent implements OnInit {
   issues: any[] =[];
-  displayedColumns = ['Description', 'author','raportedDate', 'streetAddress', 'City', 'Country'];
+  displayedColumns = ['Description', 'author','raportedDate', 'streetAddress', 'City', 'Country', 'status', 'solve'];
 
   constructor(public serverh: ServerHService) { }
 
@@ -23,6 +23,7 @@ export class OdashboardComponent implements OnInit {
   solveIssue(id: string){
     window.alert("The Issue is solved!")
     console.log(id);
+    this.serverh.solveIssue(id);
   }
 
 }

@@ -7,7 +7,7 @@ import { ServerHService } from 'src/app/services/server-h.service';
 })
 export class RdashboardComponent implements OnInit {
   issues: any[] =[];
-  displayedColumns = ['Description', 'assignedUser','raportedDate', 'streetAddress', 'City', 'Country'];
+  displayedColumns = ['Description', 'assignedUser','raportedDate', 'streetAddress', 'City', 'Country', 'update'];
   tab:number | undefined;
   constructor(public serverh: ServerHService) { }
 
@@ -18,5 +18,8 @@ export class RdashboardComponent implements OnInit {
         console.log(posts);
         this.issues = posts as any;}
     );
+  }
+  updateIssue(id:String){
+    console.log(id);
   }
 }

@@ -13,14 +13,13 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { ReporterGuard } from './guards/reporter.guard';
 import { OperatorGuard } from './guards/operator.guard';
+import { UpdateIssueComponent } from './reporter/update-issue/update-issue.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
-  //{path:"about", component:AboutComponent},
-  //{path:"restaurant", component:RestaurantComponent},
-  //{path:"menu/:name", component:MenuComponent},
   {path:"home", component:HomeComponent},
   {path:"login", component:LoginComponent, canActivate:[AuthGuard]},
+  {path: 'issue/:id', component: UpdateIssueComponent},
   {path:"signup", component:SignupComponent, canActivate:[AuthGuard]},
   {path:"admin", component:UserpanelComponent, canActivate:[AdminGuard]},
   {path:"operator", component:OdashboardComponent, canActivate:[OperatorGuard]},

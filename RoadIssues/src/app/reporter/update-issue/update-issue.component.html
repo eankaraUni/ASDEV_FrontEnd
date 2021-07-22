@@ -1,0 +1,36 @@
+<div class="form-card">
+    <mat-card class="mat-card">
+        <mat-card-header class="header">
+            <mat-card-title class="font-title-m">Sign Up</mat-card-title>
+          </mat-card-header>
+<form [formGroup]="addIssueForm" (ngSubmit)="onSubmit()">
+    <mat-card-content class="content">
+        <mat-form-field class="inputs">
+            <input matInput placeholder="Description" [(ngModel)]="issue.description" formControlName="description">
+            <mat-error>
+                Description is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="inputs">
+            <input matInput placeholder="City" [(ngModel)]="issue.City" formControlName="City">
+            <mat-error>
+                City is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="inputs">
+            <input matInput placeholder="Country" [(ngModel)]="issue.Country" formControlName="Country">
+            <mat-error>
+                Country is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="inputs">
+            <input matInput placeholder="streetAddress" [(ngModel)]="issue.streetAddress" formControlName="streetAddress">
+        </mat-form-field>
+
+    </mat-card-content>
+    <button mat-flat-button color="primary" type="submit">Submit</button>
+
+</form>
+</mat-card>
+</div>
