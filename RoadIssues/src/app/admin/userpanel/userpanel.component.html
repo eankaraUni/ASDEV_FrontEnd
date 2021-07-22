@@ -1,0 +1,41 @@
+<div class="users-table">
+  <mat-card>
+    <mat-card-content>
+      <mat-tab-group [selectedIndex]="this.tab">
+        <mat-tab label="UsersPanel">
+          <mat-table [dataSource]="users" aria-label="Elements" class="  mat-elevation-z8 mainList">
+            <ng-container matColumnDef="firstname">
+              <th mat-header-cell *matHeaderCellDef> Firstname </th>
+              <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="lastname">
+              <th mat-header-cell *matHeaderCellDef> Lastname </th>
+              <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="username">
+              <th mat-header-cell *matHeaderCellDef> Username </th>
+              <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef> Email </th>
+              <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+            <ng-container matColumnDef="role">
+              <th mat-header-cell *matHeaderCellDef> Role </th>
+              <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="userColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: userColumns;"></tr>
+          </mat-table>
+        </mat-tab>
+        <mat-tab label="Issues">
+          <app-adashboard></app-adashboard>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

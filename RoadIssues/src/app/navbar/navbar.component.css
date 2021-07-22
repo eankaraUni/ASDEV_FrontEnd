@@ -1,0 +1,14 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.buttons{
+    justify-self: flex-end;
+}
+button{
+    margin-right: 25px;
+}
+.menu{
+    cursor: pointer;
+}

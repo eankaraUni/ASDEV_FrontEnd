@@ -1,1 +1,13 @@
-<p>navbar works!</p>
+<mat-toolbar class="nav">
+    <div class="menu">
+        <mat-icon aria-hidden="false" aria-label="home" [routerLink]="''">home</mat-icon>
+    </div>
+    
+    <div *ngIf="authS.isLoggedIn()">
+        <button mat-stroked-button [routerLink]="'login'">Log In</button>
+        <button mat-stroked-button color="primary" [routerLink]="'signup'">Register</button>
+    </div>
+    <div *ngIf="!authS.isLoggedIn()">
+        <button mat-stroked-button (click)="logout()">Log out</button>
+        <!-- <button mat-stroked-button color="primary" [routerLink]="'signup'">Register</button> -->
+    </div>

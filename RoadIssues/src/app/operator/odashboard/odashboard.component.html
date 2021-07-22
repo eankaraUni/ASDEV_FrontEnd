@@ -1,1 +1,37 @@
-<p>odashboard works!</p>
+<h2>Issues</h2>
+    <mat-table [dataSource]="issues"   aria-label="Elements" class="  mat-elevation-z8 mainList" >
+      <ng-container matColumnDef="Description">
+        <th mat-header-cell *matHeaderCellDef  > Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="author">
+        <th mat-header-cell *matHeaderCellDef   > Author </th>
+        <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="raportedDate">
+        <th mat-header-cell *matHeaderCellDef  > Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.raportedDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="streetAddress">
+        <th mat-header-cell *matHeaderCellDef  > Street Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.streetAddress}} </td>
+      </ng-container>
+      <ng-container matColumnDef="City">
+        <th mat-header-cell *matHeaderCellDef  > City </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Country">
+        <th mat-header-cell *matHeaderCellDef  > Country </th>
+        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+      </ng-container>
+      <ng-container matColumnDef="solve">
+        <th mat-header-cell *matHeaderCellDef  > Solve Issue </th>
+        <td mat-cell *matCellDef="let element" > <button mat-raised-button color="primary"  (click)="solveIssue(element['_id'])">Solve</button></td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </mat-table>
